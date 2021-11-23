@@ -1,4 +1,5 @@
 class Pessoa:
+    olhos = 2            ## Atributo default / Atributo de Classe
     def __init__(self, *filhos, nome=None, idade=35):                            # *filhos->> qtd variavel de filhos
         self.idade = idade
         self.nome = nome
@@ -20,5 +21,12 @@ if __name__ == '__main__':
         print(filho.nome)
     edson.sobrenome = 'Braz'
     del edson.filhos
+    edson.olhos = 3
+    del edson.olhos
     print(edson.__dict__)
     print(luan.__dict__)
+    Pessoa.olhos = 4
+    print(Pessoa.olhos)
+    print(edson.olhos)
+    print(luan.olhos)
+    print(id(Pessoa.olhos), id(edson.olhos), id(luan.olhos))
